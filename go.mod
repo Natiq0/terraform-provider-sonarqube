@@ -1,4 +1,4 @@
-module github.com/jdamata/terraform-provider-sonarqube
+module github.com/natiq0/terraform-provider-sonarqube
 
 go 1.18
 
