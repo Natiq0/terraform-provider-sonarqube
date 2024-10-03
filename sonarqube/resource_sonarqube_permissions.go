@@ -3,6 +3,7 @@ package sonarqube
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -253,14 +254,16 @@ func resourceSonarqubePermissionsRead(d *schema.ResourceData, m interface{}) err
 			if err != nil {
 				return fmt.Errorf("resourceSonarqubePermissionsRead: Failed to decode json into struct: %+v", err)
 			}
-
+			// Append the groups from the current page to the allGroups slice
 			allGroups = append(allGroups, groups.Groups...)
 
+			// Calculate the total number of pages based on the total number of items and the page size
+			totalPages := math.Ceil(float64(groups.Paging.Total) / float64(groups.Paging.PageSize))
+
 			// Check if there are more pages
-			if groups.Paging.Total <= groups.Paging.PageIndex {
+			if int64(totalPages) <= groups.Paging.PageIndex {
 				break
 			}
-
 			// Increment the page number for the next request
 			RawQuery.Set("p", strconv.Itoa(int(groups.Paging.PageIndex+1)))
 		}
