@@ -24,7 +24,7 @@ provider "sonarqube" {
 terraform {
   required_providers {
     sonarqube = {
-      source = "jdamata/sonarqube"
+      source = "natiq0/sonarqube"
     }
   }
 }
