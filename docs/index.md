@@ -7,7 +7,7 @@ The sonarqube provider is used to configure sonarqube. The provider needs to be 
 terraform {
   required_providers {
     sonarqube = {
-      source = "jdamata/sonarqube"
+      source = "natiq0/sonarqube"
     }
   }
 }

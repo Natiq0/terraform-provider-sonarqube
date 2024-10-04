@@ -11,7 +11,7 @@ Terraform provider for managing Sonarqube configuration
 This is a community provider and is not supported by Hashicorp.
 
 ## Installation
-This provider has been published to the Terraform Registry at https://registry.terraform.io/providers/jdamata/sonarqube. Please visit the registry for documentation and installation instructions.
+This provider has been published to the Terraform Registry at https://registry.terraform.io/providers/natiq0/sonarqube. Please visit the registry for documentation and installation instructions.
 
 ## Developing the Provider
 
